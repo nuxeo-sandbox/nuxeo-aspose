@@ -1,4 +1,4 @@
-package com.nuxeo.aspose;
+package org.nuxeo.aspose;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.nuxeo.aspose.AsposeConvertOp;
 import org.nuxeo.common.utils.FileUtils;
 import org.nuxeo.ecm.automation.AutomationService;
 import org.nuxeo.ecm.automation.OperationChain;
@@ -27,7 +28,7 @@ import org.nuxeo.runtime.test.runner.FeaturesRunner;
 @RunWith(FeaturesRunner.class)
 @Features(AutomationFeature.class)
 @RepositoryConfig(init = DefaultRepositoryInit.class, cleanup = Granularity.METHOD)
-@Deploy("com.nuxeo.aspose.aspose-plugin-core")
+@Deploy("org.nuxeo.aspose.aspose-plugin-core")
 
 public class TestAsposeConvert {
 

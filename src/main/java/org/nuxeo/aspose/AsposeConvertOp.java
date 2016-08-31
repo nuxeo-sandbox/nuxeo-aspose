@@ -1,4 +1,4 @@
-package com.nuxeo.aspose;
+package org.nuxeo.aspose;
 
 import org.nuxeo.ecm.automation.core.Constants;
 import org.nuxeo.ecm.automation.core.annotations.Context;

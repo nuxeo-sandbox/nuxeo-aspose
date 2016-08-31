@@ -16,7 +16,7 @@
  * Contributors:
  *     thibaud
  */
-package com.nuxeo.aspose;
+package org.nuxeo.aspose;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

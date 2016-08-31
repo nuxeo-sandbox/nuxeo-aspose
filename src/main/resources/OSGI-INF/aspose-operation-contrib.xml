@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<component name="com.nuxeo.aspose.operation.word-to-p-d-f" version="1.0">
+<component name="org.nuxeo.aspose.operation.word-to-p-d-f" version="1.0">
 
   <extension point="operations" target="org.nuxeo.ecm.core.operation.OperationServiceComponent">
-    <operation class="com.nuxeo.aspose.AsposeConvertOp"/>
+    <operation class="org.nuxeo.aspose.AsposeConvertOp"/>
   </extension>
 
 </component>
