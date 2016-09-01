@@ -15,7 +15,7 @@ import org.nuxeo.ecm.core.api.CoreSession;
 @Operation(id=AsposeConvertOp.ID, category=Constants.CAT_DOCUMENT, label="Convert Word to PDF", description="Converts a Word document to a PDF")
 public class AsposeConvertOp {
 
-    public static final String ID = "Document.AsposeConvertOp";
+    public static final String ID = "Document.AsposeConvertWordToPdf";
 
     @Context
     protected CoreSession session;
@@ -24,7 +24,7 @@ public class AsposeConvertOp {
     protected String path;
 
     /**
-     * Runs the AsposeConvert convertWordToPdf() 
+     * Runs the AsposeConvert convertWordToPdf()
      * @param inBlob
      * @return Blob
      * @throws UnsupportedOperationException

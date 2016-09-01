@@ -1,7 +1,6 @@
 package org.nuxeo.aspose;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 import java.io.File;
 
@@ -21,6 +20,7 @@ import org.nuxeo.ecm.core.api.impl.blob.FileBlob;
 import org.nuxeo.ecm.core.test.DefaultRepositoryInit;
 import org.nuxeo.ecm.core.test.annotations.Granularity;
 import org.nuxeo.ecm.core.test.annotations.RepositoryConfig;
+import org.nuxeo.ecm.platform.mimetype.service.MimetypeRegistryService;
 import org.nuxeo.runtime.test.runner.Deploy;
 import org.nuxeo.runtime.test.runner.Features;
 import org.nuxeo.runtime.test.runner.FeaturesRunner;
@@ -40,9 +40,12 @@ public class TestAsposeConvert {
     @Inject
     protected AutomationService automationService;
 
+    @Inject
+    protected MimetypeRegistryService mimeTypeService;
+
     @Test
     public void shouldCallTheOperation() throws OperationException {
-    	
+
         // Get the local file to test
     	File docFile = FileUtils.getResourceFileFromContext(WORD_DOC_INPUT);
     	// Encapsulate in a Blob (FileBlob here)
@@ -59,6 +62,16 @@ public class TestAsposeConvert {
         // Run it
         FileBlob result = (FileBlob) automationService.run(ctx, chain);
         assertNotNull(result);
+
+        // Check the blob
         assertEquals("application/pdf", result.getMimeType());
+        assertTrue(result.getFilename().toLowerCase().endsWith(".pdf"));
+
+        // Check the underlying file
+        File f = result.getFile();
+        assertTrue(f.length() > 0);
+        String fileMimeType = mimeTypeService.getMimetypeFromFile(f);
+        assertEquals("application/pdf", fileMimeType);
+
     }
 }
