@@ -1,24 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.nuxeo.labs.aspose</groupId>
-    <artifactId>org.nuxeo.labs.aspose-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>org.nuxeo.ecm.distribution</groupId>
+    <artifactId>nuxeo-distribution</artifactId>
+    <version>8.3</version>
   </parent>
 
-  <artifactId>nuxeo-labs-aspose-core</artifactId>
   <groupId>org.nuxeo.labs.aspose</groupId>
+  <artifactId>nuxeo-labs-aspose-parent</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Aspose plugin core</name>
-  <description>Aspose PDF converter</description>
+  <name>Nuxeo Labs Aspose Parent</name>
+  <description>Parent project for Nuxeo Labs Aspose Utils</description>
+  <packaging>pom</packaging>
 
-  <properties>
-  	<aspose-words.version>16.7.0</aspose-words.version>
-  	<aspose-pdf.version>11.8.0</aspose-pdf.version>
-  </properties>
+  <modules>
+    <module>nuxeo-labs-aspose-core</module>
+    <module>nuxeo-labs-aspose-package</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.nuxeo.labs.aspose</groupId>
+        <artifactId>nuxeo-labs-aspose-package</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>org.nuxeo.labs.aspose</groupId>
+        <artifactId>nuxeo-labs-aspose-core</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <repositories>
     <repository>
@@ -53,12 +70,13 @@
         <enabled>true</enabled>
       </snapshots>
     </repository>
-   <repository>
-       <id>AsposeJavaAPI</id>
-       <name>Aspose Java API</name>
-       <url>http://maven.aspose.com/artifactory/simple/ext-release-local/</url>
-   </repository>
+    <repository>
+      <id>AsposeJavaAPI</id>
+      <name>Aspose Java API</name>
+      <url>http://maven.aspose.com/artifactory/simple/ext-release-local/</url>
+    </repository>
   </repositories>
+
   <pluginRepositories>
     <pluginRepository>
       <id>public</id>
@@ -72,59 +90,5 @@
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
-  <dependencies>
-    <dependency>
-      <groupId>org.nuxeo.ecm.automation</groupId>
-      <artifactId>nuxeo-automation-core</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.ecm.automation</groupId>
-      <artifactId>nuxeo-automation-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.inject</groupId>
-      <artifactId>guice</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.ecm.core</groupId>
-      <artifactId>nuxeo-core-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.ecm.core</groupId>
-      <artifactId>nuxeo-core-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.runtime</groupId>
-      <artifactId>nuxeo-runtime-test</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.inject</groupId>
-      <artifactId>javax.inject</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.common</groupId>
-      <artifactId>nuxeo-common</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-   		<groupId>com.aspose</groupId>
-   		<artifactId>aspose-words</artifactId>
-   		<version>${aspose-words.version}</version>
-   		<classifier>jdk16</classifier>
-	</dependency>
-	<dependency>
-		<groupId>com.aspose</groupId>
-		<artifactId>aspose-pdf</artifactId>
-		<version>${aspose-pdf.version}</version>
-	</dependency>
-  </dependencies>
+
 </project>
