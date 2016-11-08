@@ -3,7 +3,7 @@ Bundle-ClassPath: .
 Manifest-Version: 1.0
 Bundle-Vendor: org.nuxeo.aspose
 Bundle-Version: 1.0.0
-Bundle-Name: AsposePlugin-core
+Bundle-Name: nuxeo-labs-aspose-core
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.nuxeo.aspose.aspose-plugin-core;singleton=true
 Nuxeo-Component: OSGI-INF/aspose-operation-contrib.xml
