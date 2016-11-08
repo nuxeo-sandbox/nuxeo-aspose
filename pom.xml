@@ -2,20 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
-    <groupId>org.nuxeo.ecm.distribution</groupId>
-    <artifactId>nuxeo-distribution</artifactId>
-    <version>8.3</version>
+    <groupId>org.nuxeo.labs.aspose</groupId>
+    <artifactId>org.nuxeo.labs.aspose-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
   </parent>
-  <artifactId>AsposePlugin-core</artifactId>
-  <groupId>com.nuxeo.aspose</groupId>
+
+  <artifactId>nuxeo-labs-aspose-core</artifactId>
+  <groupId>org.nuxeo.labs.aspose</groupId>
   <version>1.0-SNAPSHOT</version>
   <name>Aspose plugin core</name>
-  <description>Aspose PDF convertor</description>
+  <description>Aspose PDF converter</description>
+
   <properties>
   	<aspose-words.version>16.7.0</aspose-words.version>
   	<aspose-pdf.version>11.8.0</aspose-pdf.version>
   </properties>
+
   <repositories>
     <repository>
       <id>public</id>
