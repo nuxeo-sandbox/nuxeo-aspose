@@ -13,8 +13,8 @@
   <name>Aspose plugin core</name>
   <description>Aspose PDF convertor</description>
   <properties>
-  	<aspose-words.version>16.7.0</aspose-words.version>
-  	<aspose-pdf.version>11.8.0</aspose-pdf.version>
+    <aspose-words.version>16.7.0</aspose-words.version>
+    <aspose-pdf.version>11.8.0</aspose-pdf.version>
   </properties>
   <repositories>
     <repository>
@@ -49,11 +49,11 @@
         <enabled>true</enabled>
       </snapshots>
     </repository>
-   <repository>
-       <id>AsposeJavaAPI</id>
-       <name>Aspose Java API</name>
-       <url>http://maven.aspose.com/artifactory/simple/ext-release-local/</url>
-   </repository>
+    <repository>
+      <id>AsposeJavaAPI</id>
+      <name>Aspose Java API</name>
+      <url>http://maven.aspose.com/artifactory/simple/ext-release-local/</url>
+    </repository>
   </repositories>
   <pluginRepositories>
     <pluginRepository>
@@ -112,15 +112,20 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-   		<groupId>com.aspose</groupId>
-   		<artifactId>aspose-words</artifactId>
-   		<version>${aspose-words.version}</version>
-   		<classifier>jdk16</classifier>
-	</dependency>
-	<dependency>
-		<groupId>com.aspose</groupId>
-		<artifactId>aspose-pdf</artifactId>
-		<version>${aspose-pdf.version}</version>
-	</dependency>
+      <groupId>com.aspose</groupId>
+      <artifactId>aspose-words</artifactId>
+      <version>${aspose-words.version}</version>
+      <classifier>jdk16</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.aspose</groupId>
+      <artifactId>aspose-pdf</artifactId>
+      <version>${aspose-pdf.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.nuxeo.ecm.core</groupId>
+      <artifactId>nuxeo-core-mimetype</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>
